@@ -1,0 +1,43 @@
+mqtt:
+  switch:
+   - name: Diesel Heater
+     command_topic: "van/diesel/control"
+     state_topic: "van/diesel/heater_state_simple"
+     payload_on: "On"
+     payload_off: "Off"
+     state_off: "OFF"
+     state_on: "ON"
+
+   - name: Ventilation
+     command_topic: "van/diesel/setpoint_ventilation"
+     state_topic: "van/diesel/setpoint_ventilation"
+     payload_on: "1"
+     payload_off: "2"
+
+  sensor:
+   - name: "VanDieselControlTemperature"
+     state_topic: "van/diesel/temperature_controller"
+     unit_of_measurement: "°C"
+   - name: "VanDieselHeaterTemperature"
+     state_topic: "van/diesel/temperature_heater"
+     unit_of_measurement: "°C"
+   - name: "HeaterState"
+     state_topic: "van/diesel/heater_state"
+     unit_of_measurement: ""
+   - name: "HeaterStateNum"
+     state_topic: "van/diesel/heater_state_n"
+     unit_of_measurement: ""
+   - name: "HeaterCoreTemp"
+     state_topic: "van/diesel/heater_coretemp"
+     unit_of_measurement: "°C"
+   - name: "HeaterFanSpeed"
+     state_topic: "van/diesel/heater_fanspd"
+     unit_of_measurement: "RPM"
+   - name: "HeaterFuel"
+     state_topic: "van/diesel/heater_fuel"
+     unit_of_measurement: "l/m"
+   - name: "HeaterGlow"
+     state_topic: "van/diesel/heater_glow"
+     unit_of_measurement: "A"
+     
+     

@@ -1,0 +1,9 @@
+Lovelace card
+
+type: entities
+entities:
+  - entity: input_select.dieselheatercontrol
+  - entity: input_number.dieselheaterpower
+  - entity: input_number.dieselheatertemperature
+  - entity: switch.diesel_heater
+  - entity: switch.ventilation

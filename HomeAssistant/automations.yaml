@@ -1,0 +1,92 @@
+- id: '1672080377781'
+  alias: Diesel_SetPowerLevel
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: van/diesel/setpoint_power_level
+    id: interalsetting
+  condition: []
+  action:
+  - service: input_number.set_value
+    data:
+      value: '{{ trigger.payload }}'
+    target:
+      entity_id: input_number.dieselheaterpower
+  mode: single
+- id: '1672080539428'
+  alias: Diesel_SetMQTTHeaterPower
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_number.dieselheaterpower
+  condition:
+  - condition: not
+    conditions:
+    - condition: trigger
+      id: mqtt_set
+  action:
+  - service: mqtt.publish
+    data:
+      topic: van/diesel/setpoint_power_level
+      payload_template: '{{ states(''input_number.dieselheaterpower'') | int }}'
+  mode: single
+- id: '1672080640688'
+  alias: Diesel_SetMQTTTemp
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_number.dieselheatertemperature
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: van/diesel/setpoint_heater_temp
+      payload_template: '{{ states(''input_number.dieselheatertemperature'') | int
+        }}'
+  mode: single
+- id: '1672080696923'
+  alias: Diesel_SetInputNumberTemp
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: van/diesel/setpoint_heater_temp
+    id: mqtt_set
+  condition: []
+  action:
+  - service: input_number.set_value
+    data:
+      value: '{{ trigger.payload }}'
+    target:
+      entity_id: input_number.dieselheatertemperature
+  mode: single
+- id: '1672095387197'
+  alias: Set heatercontrol string
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_select.dieselheatercontrol
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: van/diesel/setpoint_heater_mode_string
+      payload_template: '{{ states(''input_select.dieselheatercontrol'')}}'
+  mode: single
+- id: '1672095554265'
+  alias: Setheater_option
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: van/diesel/setpoint_heater_mode_string
+    id: mqtt_set
+  condition: []
+  action:
+  - service: input_select.select_option
+    data:
+      option: '{{ trigger.payload }}'
+    target:
+      entity_id: input_select.dieselheatercontrol
+  mode: single
