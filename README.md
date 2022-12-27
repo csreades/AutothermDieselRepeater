@@ -12,7 +12,7 @@ The integration has three elements:
 	Control Panel
 	     |
 	Arduino Mega    -   Raspberry Pi   -   MQTT     - HA
-           |
+        |
 	   Heater
 
 
