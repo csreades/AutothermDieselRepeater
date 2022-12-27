@@ -22,19 +22,20 @@ The final scripts are in "HomeAssistant" and are excerpts from my HA in how I ha
  
 Finally there are the STL files for a mount for the mega so it can be mounted.
  
-For wiring (ensure TX->RX RX->TX):
+For wiring:
+"""
 	Controller
 		Red			- Heater-Red
 		Blue		- Arduino GND
 		Green (RX)	- Arduino 18 (TX)
 		White (TX)	- Arduino 19 (RX)
-		
+"""
+"""
 	Heater
-		Red			- Heater-Red
+		Red		- Heater-Red
 		Blue		- Arduino GND
 		Green (TX)	- Arduino 17 (RX)
 		White (RX)	- Arduino 16 (TX)
+"""
 	
-Arduino USB -> Pi
-Pi Wifi -> HA
 
