@@ -47,3 +47,9 @@ For wiring:
 
 	
 
+Credit for help in integration comes from:
+
+https://grimoire314.wordpress.com/2018/08/22/planar-diesel-heater-controller-reverse-engineering/
+https://grimoire314.wordpress.com/2019/03/21/autoterm-planar-diesel-heater-controller-reverse-engineering-part-2/
+http://schlussdienst.net/html/planar-2d-protocol.md
+
