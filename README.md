@@ -9,6 +9,15 @@ Example lovelace card is included which results in:
 
 The integration has three elements:
 
+	Control Panel
+	     |
+	Arduino Mega    -   Raspberry Pi   -   MQTT     - HA
+             |
+	   Heater
+
+
+
+
  - Arduino Mega 2560
 ![Arduino2560](https://github.com/csreades/AutothermDieselRepeater/blob/main/assets/arduinomega2560.webp)
  - Raspberry Pi (acting as a wifi-mqtt bridge)
@@ -25,7 +34,7 @@ Finally there are the STL files for a mount for the mega so it can be mounted.
 For wiring:
 
 	Controller
-		Red			- Heater-Red
+		Red		- Heater-Red
 		Blue		- Arduino GND
 		Green (RX)	- Arduino 18 (TX)
 		White (TX)	- Arduino 19 (RX)
