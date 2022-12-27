@@ -1,2 +1,4 @@
 # AutothermDieselRepeater
-A set of scripts to integrate autotherm diesel heater into home assistant.
+A set of scripts to integrate autotherm diesel heater into home assistant through MQTT.
+
+This results in a live and updated controller for HA that is able change all settings available through the (PU-27) controller. The controller polls for settings so changes on HA will reflect in the controller and vice versa allowing for a seamless integration.
