@@ -7,6 +7,8 @@ Example lovelace card is included which results in:
 
 ![lovelace card](https://github.com/csreades/AutothermDieselRepeater/blob/main/assets/lovelace_card_control.png)
 
+The card requires three helpers to be created to work correctly. Screenshots of these are in the HA folder.
+
 The integration has three elements:
 
 	Control Panel
